@@ -1,18 +1,40 @@
+* {
+	box-sizing: border-box;
+}
+ 
 .row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
+	padding: 0 4px;
+	column-count: 4;
+	column-gap: 8px;
 }
-/*
-.column {
+  
+.row a {
+	display: inline-block;
+	width: 100%;
+	margin-bottom: 8px;
+	text-decoration: none;
+  
+	-webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+			page-break-inside: avoid; /* Firefox */
+				 break-inside: avoid; /* Standard */
 }
-*/
+  
 .row a img {
-  margin-top: 8px;
-  vertical-align: middle;
-  flex: 25%;
-  padding: 0 0.3vw;
-  width: 24vw;
+	display: block;
+	width: 100%;
+	height: auto;
+}
+  
+@media screen and (max-width: 800px) {
+	.row {
+		column-count: 2;
+	}
+}
+  
+@media screen and (max-width: 600px) {
+	.row {
+		column-count: 1;
+	}
 }
 
 div button {
